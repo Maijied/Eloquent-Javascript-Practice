@@ -4,70 +4,120 @@
 console.log("The number is the sqrt of " + (Number * Number)); 
 
 //Loop using while
-var CurrentNumber = 0;
-while(CurrentNumber <= 10){
-    console.log("Current Number: " + CurrentNumber);
-    CurrentNumber += 2; 
+var currentNumber = 0;
+while(currentNumber <= 10){
+    console.log("Current Number: " + currentNumber);
+    currentNumber += 2; 
 }
 
 //A 'counter' variable with  a while loop. this program multiply something by 2
-var Result = 1;
-var Counter = 0;
-while(Counter < 10){
-    Result *= 2;
-    Counter += 1;
+var result = 1;
+var counter = 0;
+while(counter < 10){
+    result *= 2;
+    counter += 1;
 }
-console.log("Result: " + Result);
+console.log("result: " + result);
 
 //Resues string that the previous itearation of the loop used and add character '#' on it
-var Line = "";
-var LineCounter = 0;
-while(LineCounter < 10){
-    Line += "#";
-    console.log(Line);
-    LineCounter += 1;
+var line = "";
+var lineCounter = 0;
+while(lineCounter < 10){
+    line += "#";
+    console.log(line);
+    lineCounter += 1;
 }
 
 //Using 'for' instead of 'while'. 
 //A 'counter' variable with  a 'for' loop. this program multiply something by 2
-var ForResult = 1;
-for(var ForCounter = 0; ForCounter < 10; ForCounter += 1){
-    ForResult *= 2;
-    console.log("ForResult: " + ForResult);
+var forResult = 1;
+for(var forCounter = 0; forCounter < 10; forCounter += 1){
+    forResult *= 2;
+    console.log("forResult: " + forResult);
 }
 
 //Resues string that the previous itearation of the loop used and add character '#' on it
-var ForLine = "";
-for(var ForLineCounter = 0; ForLineCounter <10; ForLineCounter += 1){
-    ForLine += "#";
-    console.log(ForLine);
+var forLine = "";
+for(var forLineCounter = 0; forLineCounter <10; forLineCounter += 1){
+    forLine += "#";
+    console.log(forLine);
 }
 
 //All numbers between 0 to 20 which aare divisible by 3 and by 4
-for(DiviCounter = 0; DiviCounter < 20; DiviCounter++){
-    if(DiviCounter % 3 == 0 && DiviCounter % 4 == 0){
-        console.log("DiviCounter: " + DiviCounter);
+for(diviCounter = 0; diviCounter < 20; diviCounter++){
+    if(diviCounter % 3 == 0 && diviCounter % 4 == 0){
+        console.log("diviCounter: " + diviCounter);
     }
 }
 
 //Find divisible by 4 or not using 'if'
-for(DiviByFourCounter = 0; DiviByFourCounter < 20; DiviByFourCounter++){
-    if( DiviByFourCounter % 4 == 0){
-        console.log("DiviByFourCounter: " + DiviByFourCounter);
+for(diviByFourCounter = 0; diviByFourCounter < 20; diviByFourCounter++){
+    if( diviByFourCounter % 4 == 0){
+        console.log("diviByFourCounter: " + diviByFourCounter);
     }
-    if(DiviByFourCounter % 4 != 0){
-        console.log("!DiviByFourCounter: "+ DiviByFourCounter);
+    if(diviByFourCounter % 4 != 0){
+        console.log("!diviByFourCounter: "+ diviByFourCounter);
     }
 }
 //Find divisible by 4 or not using 'if/else'
-for(var DiviByFourCounter_IfElse = 0; DiviByFourCounter_IfElse < 20; DiviByFourCounter_IfElse++){
-    if( DiviByFourCounter_IfElse % 4 == 0){
-        console.log("DiviByFourCounter_IfElse: " + DiviByFourCounter_IfElse);
+for(var diviByFourCounter_IfElse = 0; diviByFourCounter_IfElse < 20; diviByFourCounter_IfElse++){
+    if( diviByFourCounter_IfElse % 4 == 0){
+        console.log("diviByFourCounter_IfElse: " + diviByFourCounter_IfElse);
     }
     else{
-        console.log("!DiviByFourCounter_IfElse"+ DiviByFourCounter_IfElse);
+        console.log("!diviByFourCounter_IfElse"+ diviByFourCounter_IfElse);
     }
 }
 
+//Add 2 star(*) if greater than 15, 1 start(*) if greater than 10 else no start
+for(var startCounter = 0; startCounter < 20; startCounter++){
+    if(startCounter > 15)
+        console.log(startCounter + "**");
+    else if(startCounter > 10)
+        console.log(startCounter + "*");
+    else
+        console.log(startCounter);
+}
 
+//Program using "Prompt", Value of 5+5
+//Works in browser
+var answer = prompt("Hey you! What is the value of 5+5?","");
+if(answer == 10)
+    alert("You must be a genius or something");
+if(answer == 9 || answer == 11)
+    alert("Almost! try again bra.")
+else
+    alert("You're a dumass");   
+
+
+//Using "Break" to break a loop
+for(var loopBreak = 20; ;loopBreak++){
+    if(loopBreak % 7 == 0){
+        break;
+    }
+}
+console.log(loopBreak);
+
+//Simple edition of previous code
+for(var simpleLoopBreak = 20; simpleLoopBreak % 7 != 0; simpleLoopBreak++)
+;
+console.log(simpleLoopBreak);
+
+//Previous prompt problem solved using "whilte" and "break"
+var whilePromptAnswer;
+while(true){
+    whilePromptAnswer = prompt("Hey you! What is the value of 5+5?","");
+    if(whilePromptAnswer == 10){
+        alert("Sobai pare");
+        break;
+    }
+    else if(whilePromptAnswer == 9 || whilePromptAnswer == 11){
+        alert("Arekto poralikha kora lagbe..!");
+        break;
+    }    
+    else{
+        alert("Gad....!");
+        break;
+    }
+}
 

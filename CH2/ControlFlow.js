@@ -1,50 +1,50 @@
-// Arithmetic operation
- var Arithmetic = (100 + 400) * 4;
- console.log("Arithmetic: " + Arithmetic);
+// arithmetic operation
+ var arithmetic = (100 + 400) * 4;
+ console.log("arithmetic: " + arithmetic);
  
- //String
- var String = "Patch my boat with chewing gum";
- console.log("String: " + String);
+ //string
+ var string = "Patch my boat with chewing gum";
+ console.log("string: " + string);
 
  var NewLineString = "Patch my boat with chewing gum \nPatch my 2'nd boat with chewing gum";
- console.log("New Line String: " + NewLineString);
+ console.log("New line string: " + NewLineString);
 
  //Double backslash to print a backslash
- var A_NewLineCharacter = "A newline character is wriiten like \"\\n\".";
- console.log("Use Backslash: " + A_NewLineCharacter);
+ var a_NewLineCharacter = "A newline character is wriiten like \"\\n\".";
+ console.log("Use Backslash: " + a_NewLineCharacter);
 
- //String concate
+ //string concate
  var concate = "My"+" Name"+" Is"+" Khan";
- console.log("Concare Result: " + concate);
+ console.log("Concare result: " + concate);
 
  //TypeOf Values
- var FractionalValue = 3.14;
- console.log(typeof(Arithmetic));
- console.log(typeof(String));
+ var fractionalValue = 3.14;
+ console.log(typeof(arithmetic));
+ console.log(typeof(string));
  console.log(typeof(concate));
- console.log(typeof(FractionalValue));
+ console.log(typeof(fractionalValue));
  console.log(typeof(-(10-2)));
 
  //Boolean type by compare
- var TrueBool = 321 > 231;
- var FalseBool = 321 < 231;
- var StringCompare = "AvadaKedavra" < "Sectumsempra";
- var LowercaseStringCompare = "avadaKedavra" > "Sectumsempra"; //Uppercase letters always 'less' than lowercase one's.
+ var trueBool = 321 > 231;
+ var falseBool = 321 < 231;
+ var stringCompare = "AvadaKedavra" < "Sectumsempra";
+ var lowercaseStringCompare = "avadaKedavra" > "Sectumsempra"; //Uppercase letters always 'less' than lowercase one's.
 
- console.log("True boolean Type: " + TrueBool);
- console.log("False boolean Type: " + FalseBool);
- console.log("String compare boolean Type: " + StringCompare);
- console.log("Lowercase string compare boolean Type: " + LowercaseStringCompare);
+ console.log("True boolean Type: " + trueBool);
+ console.log("False boolean Type: " + falseBool);
+ console.log("string compare boolean Type: " + stringCompare);
+ console.log("Lowercase string compare boolean Type: " + lowercaseStringCompare);
 
  //Logical operator
  // (flase || true) && !(false && true)
- var CheckLogicalBool = (4 >= 6 || "Maizied" != "Hasan") && !(12 * 2 == 144 && true); 
- console.log("Logical Operator: " + CheckLogicalBool);
+ var checkLogicalBool = (4 >= 6 || "Maizied" != "Hasan") && !(12 * 2 == 144 && true); 
+ console.log("Logical Operator: " + checkLogicalBool);
 
  //decrement value by new value
- var InitialVal = 999;
- InitialVal = InitialVal - 111;
- console.log("Decrement: " + InitialVal);
+ var initialVal = 999;
+ initialVal = initialVal - 111;
+ console.log("Decrement: " + initialVal);
  
 //Differnet print function. Works in browser
 // alert("Hey, Your hair is on fire..!");
