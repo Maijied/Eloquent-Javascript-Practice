@@ -101,3 +101,68 @@ var toDay = new Date();
 console.log(toDay);  //2021-08-25T12:22:46.672Z
 console.log("Year: ", toDay.getFullYear(), ", Month: ", toDay.getMonth(), ", Day: ", toDay.getDay()); //Year:  2021 , Month:  7 , Day:  3
 
+
+//startWith take 2 arguments(String) and returns "true" if first argument starts with the characterin the second argument
+//otherwise "false"
+function startsWith(stringaa, pattern){
+  return stringaa.slice(0, pattern.length) == pattern;
+}
+console.log(startsWith("rotation", "rot")); //true
+
+//index of colon in the program and slice after color
+function catNames(paragraph){
+  var colon = paragraph.indexOf(":");
+  return paragraph.slice(colon + 2).split(", ");
+}
+console.log(catNames("Born 20/09/2021 (mother yellow base ) : " + "Doctor hobbies the 2nd, Noog")); 
+//[ 'Doctor hobbies the 2nd', 'Noog' ]
+
+//Cat Problems
+function retriveMails(){
+  return "born 15/11/2003 (mother Spot off-white): white fang, \n died 20/09/2021 (mother Spot yellow base ): yello angel, \nborn 18/01/2015 (mother Spot white): ice kitty";
+}
+var catMails = retriveMails();
+console.log("CatMails: " + catMails);
+/* Outputs ->
+{
+  '0': 'Born 15/11/2003 (mother spot): white fang',
+  '1': 'Born 20/09/2021 (mother yellow base ): yello angel',
+  '2': 'Born 18/01/2015 (mother white): ice kitty'
+}*/
+var catMailArchive = retriveMails();
+var livingCats = {"Spot": true};
+
+for(var catsMail = 0; catsMail < catMailArchive.length; catsMail++ ){
+  var catsParagraphs = catMailArchive[catsMail].split("\n");
+  for(var catsParagraph = 0; catsParagraph < catsParagraphs.length; catsParagraph++){
+    if(startsWith(catsParagraphs[catsParagraph], "born")){
+      var names = catNames(catsParagraphs[catsParagraph]);
+      for(var namee = 0; namee < names.length; namee++)
+        livingCats[namee[namee]] == true;
+    }
+    else if(startsWith(catsParagraphs[catsParagraph], "born")){
+      var names = catNames(catsParagraphs[catsParagraph]);
+      for(var namee = 0; namee < names.length; namee++)
+        delete livingCats[namee[namee]];
+    }
+  } 
+}
+// for(var cat in livingCats){
+//   console.log("cat :" + cat);
+// }
+// if("Spot" in livingCats)
+//   console.log("Spot lives!");
+// else
+//   console.log("RIP!");
+console.log(livingCats);
+
+//object method watcher , used add a watcher to your own property
+var winston = {mind: "complaint"};
+function watcher(propertyName, from, to){
+  if(to == "complaint")
+    console.log("DoublePlusGood");
+  else
+    console.log("Transmitting information to thought police...");
+}
+winston.watch("mind", watcher); //Works in some browser
+winston.mind = "rebelions";
