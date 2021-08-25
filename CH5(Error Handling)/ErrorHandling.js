@@ -15,10 +15,10 @@ console.log(between("abc")); //undefined
 console.log(between("My name is khan", "My")); //undefined
 console.log(between("My name is khan", "My", "khan")); // name is 
 
-// var input = prompt("Tell me nothing", ""); //remove commen when compiled in browser 
-// var parenthesized = between(input, "(", ")"); //remove commen when compiled in browser 
-// if(parenthesized != undefined)
-//     console.log("You parenthesized '", parenthesized, "'."); 
+// var input = prompt("Tell me nothing", ""); //remove commen when compile in browser 
+// var parenthesized = between(input, "(", ")"); //remove commen when compile in browser 
+// if(parenthesized != undefined) //remove commen when compile in browser
+//     console.log("You parenthesized '", parenthesized, "'."); //remove commen when compile in browser
     /*input -> (my name is maizied)
     output -> You parenthesized ' my name is maizied '.
     input -> Hello there.
