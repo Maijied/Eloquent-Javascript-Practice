@@ -99,6 +99,12 @@ console.log(renderHTML(link("http://nedroid.com", "Drawings!")));
 <a 0="Drawings!"><a>
 */
 
+// var body = [tag("h1", ["The Test"]),
+//             tag("p", ["Here is a paragraph and an image...."]),
+//             image("img/sheep.png")];
+// var doc = htmlDoc("The Test", body);
+// console.log(renderHTML(doc));
+
 //   function htmlDoc(title, bodyContent){
 //       return tag("html", [tag("head", [tag("title", [title])]),
 //              tag("body", bodyContent)]);
