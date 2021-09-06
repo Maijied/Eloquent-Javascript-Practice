@@ -1,0 +1,48 @@
+#What are the compiler and interpreter ?
+    @The source code is passed through a program called a compiler, which translates it into bytecode that the machine understands and can execute.In contrast, JavaScript has no compilation step.Instead, an interpreter in the browser reads over the JavaScript code, interprets each line, and runs it.
+
+#Interpreter versus Compiler
+    @Interpreter translates just one statement of the program at a time into machine code.
+    @Compiler scans the entire program and translates the whole of it into machine code at once.
+
+#Is JavaScript an interpreted or compiled language?
+    @JavaScript is an interpreted language, not a compiled language.
+
+#What is the JIT compiler and how does it work?
+    @JavaScript, the compilation is done during execution. The source code will be converted into assembly language like structure [for ex IL (intermediate language) for C#, ByteCode for java].
+    The intermediate code is converted into machine language only when the application needs that is required codes are only converted to machine code.
+    
+#Types of JS engine
+    @V8 from Google is the most used JavaScript engine.
+    @SpiderMonkey is developed by Mozilla for use in Firefox and its forks.
+    @JavaScriptCore is Apple's engine for its Safari browser.
+    @Chakra is the engine of the Internet Explorer browser.
+
+#What’s the difference between compiling and polyfilling?
+    @What Is Compiling JavaScript?
+    Babel is used to compile your code to be compatible with older versions of JavaScript (and thus work in older browsers).
+    Compiling means the compiler (Babel) performs syntax transforms, but it does not add any new JavaScript primitives.
+    When you compile your code, you are transforming it.
+
+    @What Is a JavaScript Polyfill?
+    When you add a polyfill, you are adding brand-new functionality to your JavaScript code that did not exist there before.
+    Polyfills are necessary for new features that have been added to JavaScript that cannot be duplicated in vanilla JavaScript code.
+    Polyfills are necessary for new properties that have been added to the global JavaScript namespace, as the compiler does not interpret those.
+    
+    Ref: https://wikimetrics.xyz/compiling-vs-polyfilling-in-javascript-6bbc5707a253?__cpo=aHR0cHM6Ly9iZXR0ZXJwcm9ncmFtbWluZy5wdWI
+
+#What is the thread of execution context?
+    @https://semway.me/@itIsMadhavan/what-is-the-execution-context-stack-in-javascript-e169812e851a?__cpo=aHR0cHM6Ly9tZWRpdW0uY29t#:~:text=The%20JavaScript%20interpreter%20in%20a,is%20called%20the%20Execution%20Stack%20.
+    @https://dev.to/terrythreatt/what-is-the-execution-context-in-javascript-4j45
+
+#Global execution context
+    @Global execution context
+
+#Function or Local execution context
+    @https://storagecat.xyz/learn-javascript-fundamentals-scope-context-execution-context-9fe8673b3164?__cpo=aHR0cHM6Ly9sZXZlbHVwLmdpdGNvbm5lY3RlZC5jb20
+
+#What is the scope in JavaScript?
+    @https://www.digitalocean.com/community/tutorials/understanding-variables-scope-hoisting-in-javascript
+
+    
+
