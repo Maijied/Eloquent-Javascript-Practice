@@ -42,7 +42,7 @@ function curryingDiscount(curryingDisc){
 }
 
 let tenPercentDiscount = curryingDiscount(.1); //This is called `Prtial Function`
-let twentyPercentDiscount = curryingDiscount(.2); //This is also Partial function
+let twentyPercentDiscount = curryingDiscount(.2); //This is also `Partial function`
 let customerID1 = tenPercentDiscount(500);
 let customerID2 = tenPercentDiscount(600);
 let customerID3 = tenPercentDiscount(700);
@@ -52,3 +52,7 @@ console.log(customerID1);
 console.log(customerID2);
 console.log(customerID3);
 console.log(customerID4);
+
+//Another Curried Version
+const arrowMultiply = (a) => (b) => (c) => a * b * c;
+console.log(arrowMultiply(2)(3)(2));
