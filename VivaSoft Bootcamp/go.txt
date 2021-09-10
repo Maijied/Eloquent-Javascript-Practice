@@ -9,8 +9,10 @@
     @JavaScript is an interpreted language, not a compiled language.
 
 #What is the JIT compiler and how does it work?
-    @JavaScript, the compilation is done during execution. The source code will be converted into assembly language like structure [for ex IL (intermediate language) for C#, ByteCode for java].
-    The intermediate code is converted into machine language only when the application needs that is required codes are only converted to machine code.
+    @JavaScript, the compilation is done during execution. The source code will be converted into assembly 
+    language like structure [for ex IL (intermediate language) for C#, ByteCode for java].
+    The intermediate code is converted into machine language only when the application needs that is required 
+    codes are only converted to machine code.
     
 #Types of JS engine
     @V8 from Google is the most used JavaScript engine.
@@ -20,14 +22,15 @@
 
 #What’s the difference between compiling and polyfilling?
     @What Is Compiling JavaScript?
-    Babel is used to compile your code to be compatible with older versions of JavaScript (and thus work in older browsers).
-    Compiling means the compiler (Babel) performs syntax transforms, but it does not add any new JavaScript primitives.
-    When you compile your code, you are transforming it.
+    Compiling In JavaScript Compiling is nothing but actually it is a Transpiling. Transpiling is the subset of
+    compiling where the source code of one language is converted into other language or in different version of same 
+    language. Compiling also means not to introduce new functionality while conversion.
 
     @What Is a JavaScript Polyfill?
-    When you add a polyfill, you are adding brand-new functionality to your JavaScript code that did not exist there before.
-    Polyfills are necessary for new features that have been added to JavaScript that cannot be duplicated in vanilla JavaScript code.
-    Polyfills are necessary for new properties that have been added to the global JavaScript namespace, as the compiler does not interpret those.
+    Polyfilling is a way to include functionality which is not present natively. This means if you are using a native 
+    functionality which is available on one browser but not in other browser or in the legacy browsers then you need to 
+    add the polyfill to have that functionality to work in all the browsers.
+
     
     Ref: https://wikimetrics.xyz/compiling-vs-polyfilling-in-javascript-6bbc5707a253?__cpo=aHR0cHM6Ly9iZXR0ZXJwcm9ncmFtbWluZy5wdWI
 
@@ -43,6 +46,89 @@
 
 #What is the scope in JavaScript?
     @https://www.digitalocean.com/community/tutorials/understanding-variables-scope-hoisting-in-javascript
+
+#Types of scopes:
+    The Scope: 
+        if (true) {
+        const message = 'Hello';
+        }
+        console.log(message);
+    Block scope: 
+        for (const color of ['green', 'red', 'blue']) {
+        // "for" block scope
+            const message = 'Hi';
+            console.log(color);   // 'green', 'red', 'blue'
+            console.log(message); // 'Hi', 'Hi', 'Hi'
+        }
+            console.log(color);   // throws ReferenceError
+            console.log(message); // throws ReferenceError 
+    Function scope:
+        function run() {
+            // "run" function scope
+            var message = 'Run, Forrest, Run!';
+            console.log(message); // 'Run, Forrest, Run!'
+        }
+        run();
+        console.log(message); // throws ReferenceError
+    Module scope: 
+        // "circle" module scope
+        const pi = 3.14159;
+        console.log(pi); // 3.14159
+        
+        // Usage of pi
+        import './circle';
+        console.log(pi); // throws ReferenceError
+
+    Scopes can be nested:
+        function run() {
+        // "run" function scope
+        const message = 'Run, Forrest, Run!';
+        if (true) {
+            // "if" code block scope
+            const friend = 'Bubba';
+            console.log(message); // 'Run, Forrest, Run!'
+        }
+            console.log(friend); // throws ReferenceError
+        }
+        run();
+
+    Global scope:
+        <script src="myScript.js"></script>
+        // myScript.js
+
+        // "global" scope
+        let counter = 1
+
+    Lexical scope: 
+        function outerFunc() {
+        // the outer scope
+        let outerVar = 'I am from outside!';
+        function innerFunc() {
+            // the inner scope
+            console.log(outerVar); // 'I am from outside!'
+        }
+        return innerFunc;
+        }
+        const inner = outerFunc();
+        inner();
+    
+    Variables isolation:
+        function foo() {
+            // "foo" function scope
+            let count = 0;
+            console.log(count); // 0
+        }
+        function bar() {
+            // "bar" function scope
+            let count = 1;
+            console.log(count); // 1
+        }
+        foo();
+        bar();
+
+#What is the Window Object in DOM? 
+    @The window object represents an open window in a browser.
+    If a document contain frames (<iframe> tags), the browser creates one window object for the HTML document, and one additional window object for each frame.
 
     
 
