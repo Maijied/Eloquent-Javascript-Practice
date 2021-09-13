@@ -3,7 +3,7 @@
 
 //Traditional way
 function multiply(a,b,c){
-    return a*b*c;
+    return a * b * c;
 }
 multiply(5,6,7);
 
@@ -11,7 +11,7 @@ multiply(5,6,7);
 function curryingMultiply(a){
     return function(b){
         return function(c){
-            return a*b*c;
+            return a * b * c;
         }
     }
 }
@@ -21,6 +21,7 @@ let step1 = curryingMultiply(5);
 let step2 = step1(6);
 let step3 = step2(7);
 console.log(`Step 3: ${step3}`);
+console.dir(curryingMultiply);
 
 //Why we'll use currying
 //Tradtional way
@@ -56,3 +57,29 @@ console.log(customerID4);
 //Another Curried Version
 const arrowMultiply = (a) => (b) => (c) => a * b * c;
 console.log(arrowMultiply(2)(3)(2));
+
+
+//test currying
+function curryTest(a){
+    return function(b){
+        return function(c){
+            return a + b + c;
+        }
+    }
+}
+
+curryTest(1)(1)(1);
+
+const curryArrowTest = (a) => (b) => (c) => a + b + c;
+curryArrowTest(2)(2)(2);
+
+//Currying with partial function
+function bookDiscount(bookDisc){
+    return (bookPrice) => {
+        return bookPrice - bookPrice * bookDisc;
+    }
+}
+
+var tenPercentBookDiscount = bookDiscount(.1);  //Partial Function
+var bookCustomer = tenPercentBookDiscount(500); //450
+console.log(bookCustomer);
