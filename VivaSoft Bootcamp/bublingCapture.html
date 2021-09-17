@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript getElementsByName Demo</title>
+</head>
+<body>
+   <h1>Bubling</h1>
+   <p>
+      Event bubbling is the order in which event handlers are called when one element is nested inside a second element, and both elements have registered a listener for the same event (a click, for example). With bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements.
+With capturing, the event is first captured by the outermost element and propagated to the inner elements.
+   </p>
+   <div id='outer' style='background-color:red;display:inline-block;padding:50px;'>
+      Outer Div
+   <div id='inner' style='background-color:yellow;display:inline-block;padding:50px;'>
+      Inner Div
+   </div>
+   </div>
+   <!-- Event.preventDefault() -->
+   <a href="https://www.javascripttutorial.net/">JS Tutorial</a>
+   <button id="btn">MyBtn</button>
+   <script>
+      let btn = document.querySelector('#btn');
+
+      btn.addEventListener('click', function(event) {
+      console.log(event.type);
+      console.log('The button was clicked');
+      event.stopPropagation();
+      console.log('Propagation')
+});
+document.body.addEventListener('click',function(event) {
+    console.log('The body was clicked!');
+});
+   </script>
+   <script>
+      let link = document.querySelector('a');
+
+link.addEventListener('click',function(event) {
+    console.log('clicked');
+    event.preventDefault(); //disabled default behaviours
+});
+   </script>
+   <script>
+      // Bubling
+      // document.querySelector('#outer').addEventListener('click', e => {
+      //    console.log('Outer div is clicked');
+      // }, false);
+      // document.querySelector('#inner').addEventListener('click', e => {
+      //    console.log('Inner div is clicked');
+      // }, false);
+   </script>
+   <script>
+      //Capture
+      document.querySelector('#outer').addEventListener('click', e => {
+         console.log('Outer div is clicked');
+      }, true);
+      document.querySelector('#inner').addEventListener('click', e => {
+         console.log('Inner div is clicked');
+      }, true);
+   </script>
+</body>
+</html>

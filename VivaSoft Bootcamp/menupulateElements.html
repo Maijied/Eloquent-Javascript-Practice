@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS CreateElement Demo</title>
+</head>
+<body>
+    <ul id="first-list">
+        <li>Everest</li>
+        <li>Fuji</li>
+        <li>Kilimanjaro</li>
+    </ul>
+    
+    <ul id="second-list">
+        <li>Karakoram Range</li>
+        <li>Denali</li>
+        <li>Mont Blanc</li>
+    </ul>
+    <p id="pid"></p>
+
+    <ul class="anotherUl">
+
+    </ul>
+    <ul id="list">
+        <li>CSS</li>
+    </ul>
+    <p id="pid2">Hello PID 2</p>
+    <ul id="menuRep">
+        <li>Homepage</li>
+        <li>Services</li>   
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+    <ul id="menuRem">
+        <li>Home</li>
+        <li>Products</li>
+        <li>About Us</li>
+    </ul>
+    <ul id="cloneNode">
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+    </ul>
+    <script>
+        //Colne Node
+        let cloneMenu = document.querySelector("#cloneNode");
+        let clonedMenu = cloneMenu.cloneNode(true);
+        clonedMenu.id = "clonedMenu";
+        document.body.appendChild(clonedMenu);
+    </script>
+    <script>
+        //Remove Child
+        let removeChild = document.querySelector("#menuRem");
+        removeChild.removeChild(removeChild.lastElementChild);
+    </script>
+    <script>
+        //Replace Child
+        let menuRep = document.querySelector('#menuRep');
+        let menuRapLi = document.createElement('li');
+        menuRapLi.textContent = "Location";
+        menuRep.replaceChild(menuRapLi, menuRep.firstElementChild);
+    </script>
+    <script>
+        let UlList = document.querySelector('#pid2');
+        UlList.insertAdjacentHTML('beforebegin', '<h2>Web Technologies</h2>');
+        UlList.insertAdjacentHTML('afterbegin', '<li>HTML</li>');
+        UlList.insertAdjacentHTML('beforeend', '<li>JS</li>');
+        UlList.insertAdjacentHTML('afterend', '<h2>For Frontend Development</h2>');
+    </script>
+    <script>
+        let secondListUl = document.querySelector('#second-list');
+        let makeLi = document.createElement("li");
+        makeLi.textContent = "Saint Martin";
+        let makeLi2 = document.createElement('li');
+        makeLi2.textContent = "Cox's Bazar";
+        secondListUl.insertBefore(makeLi, secondListUl.firstElementChild);
+        secondListUl.insertBefore(makeLi2, secondListUl.lastElementChild);
+        secondListUl.insertBefore(makeLi2, secondListUl.lastElementChild.previousElementSibling);
+    </script>
+    <script>
+        let anotherUl = document.querySelector(".anotherUl");
+        let languages = ['JS', 'C', 'C++', 'PHP', 'Ruby'];
+        
+        let fragment = new DocumentFragment();
+        languages.forEach((language) => {
+            let li = document.createElement("li");
+            li.innerHTML = language;
+            fragment.appendChild(li);    
+        });
+        anotherUl.appendChild(fragment);
+
+    </script>
+    <script>
+        let getText = document.querySelector("#second-list");
+        let getFirstChildTextData = getText.firstElementChild;
+        let getLastChildTextData = getText.lastElementChild;
+        getLastChildTextData.innerHTML = "";
+        console.log(getFirstChildTextData);
+        let pid = document.querySelector("#pid");
+        pid.innerText = getFirstChildTextData.innerText;
+        let firstUL = document.querySelector("#first-list");
+        let secondUL = document.querySelector('#second-list');
+        let firstChild = firstUL.firstElementChild;
+        secondUL.appendChild(firstChild);
+
+        let div = document.createElement('div');
+        div.id = "content";
+        div.className = "mainContent";
+        div.innerHTML = "<p>Create elements using JS.</p>";
+        document.body.appendChild(div);
+
+        let anotherDiv = document.createElement('div');
+        anotherDiv.id = "anotherDivId";
+        anotherDiv.className = "AnotherDivClass";
+        anotherDiv.innerHTML = "<h1>Hello, i'm h1.</h1>";
+        document.body.appendChild(anotherDiv);
+
+        let thirdDiv = document.createElement("div");
+        thirdDiv.id = "thirdDivId";
+        thirdDiv.className = "thirdDivClass";
+        document.body.appendChild(thirdDiv);
+
+        let para = document.createElement("p");
+        para.id = "paraId";
+        para.className = "paraClass";
+        para.innerHTML = "Appended oin third child";
+        thirdDiv.appendChild(para);
+
+        let getPara = document.querySelectorAll("p");
+        console.log(getPara);
+        getPara.forEach((singlePara)=> {
+            singlePara.style.color = "green";
+        })
+
+        //Creating list 
+        let ul = document.createElement('ul');
+        document.body.appendChild(ul);
+
+        let li1 = document.createElement("li");
+        li1.innerHTML = "JS";
+
+        let li2 = document.createElement("li");
+        li2.innerHTML = "HTML";
+
+        ul.appendChild(li1);
+        ul.appendChild(li2);
+
+        //Adding script
+        let script = document.createElement("script");
+        script.src = "testScript.js";
+        document.body.appendChild(script);
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!-- Sample HTML Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM Traversal</title>
+    <style>
+        body{
+            background-color: lavender;
+        }
+        .grandParent{
+            background-color: hsl(0, 50%, 50%);
+        }
+        .parent{
+            background-color: hsl(100, 50%, 50%);
+        }
+        .child{
+            background-color: hsl(200, 50%, 50%);
+        }
+    </style>
+    <script src="domTraversalJS.js" defer></script>
+</head>
+<body>
+   <div class="grandParent" id="grandParent-id">
+       <div class="parent">
+            <div class="child"><p>Child 10</p></div>
+            <div class="child">Child 11</p></div>
+       </div>
+       <div class="parent">
+            <div class="child">Child 20</p></div>
+            <div class="child">Child 21</p></div>
+       </div>
+   </div>
+   <script>
+       var gp = document.querySelector('.grandParent');
+var pa = Array.from(gp.children);
+var cp = pa[0];
+var child = cp.children;
+// child.forEach(changeColor);
+changeColor(child[0]);
+function changeColor(element){
+    element.style.backgroundColor = "black";
+}
+   </script>
+</body>
+</html>

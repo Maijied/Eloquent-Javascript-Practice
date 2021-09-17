@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript getElementsByName Demo</title>
+</head>
+<body>
+    <p id="firstId">Please rate the service:</p>
+    <p>
+        <input type="radio" name="rate" value="Very poor"> Very poor
+        <input type="radio" name="rate" value="Poor"> Poor
+        <input type="radio" name="rate" value="OK"> OK
+        <input type="radio" name="rate" value="Good"> Good
+        <input type="radio" name="rate" value="Very Good"> Very Good
+    </p>
+    <p>
+        <button id="btnRate">Submit</button>
+    </p>
+    <div class="tagName">
+        <h1>JavaScript getElementsByTagName() Demo</h1>
+        <h2>First heading</h2>
+        <p>This is the first paragraph.</p>
+        <h2>Second heading</h2>
+        <p>This is the second paragraph.</p>
+        <h2>Third heading</h2>
+        <p>This is the third paragraph.</p>
+    </div>
+    <button id="btnTagCount">TagName => Count H2</button>
+    <!-- GetElementByClassName -->
+    <div id="app">
+        <header>
+            <h1>getElementsByClassName Demo</h1>
+            <nav>
+                <ul id="menu">
+                    <li class="item">HTML</li>
+                    <li class="item">CSS</li>
+                    <li class="item highlight">JavaScript</li>
+                    <li class="item">TypeScript</li>
+                </ul>
+            </nav>
+        </header>
+         <section>
+            <article>
+                <h2 class="heading-secondary">Example 1</h2>
+            </article>
+            <article>
+                <h2 class="heading-secondary">Example 2</h2>
+            </article>
+        </section>
+    </div>
+    <header>
+        
+        <nav class="primary-nav">
+            <ul>
+                <li class="menu-item current"><a href="#home">Home</a></li>
+                <li class="menu-item"><a href="#services">Services</a></li>
+                <li class="menu-item"><a href="#about">About</a></li>
+                <li class="menu-item"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome to the JS Dev Agency</h1>
+
+        <div class="container">
+            <section class="section-a">
+                <h2>UI/UX</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem placeat, atque accusamus voluptas
+                    laudantium facilis iure adipisci ab veritatis eos neque culpa id nostrum tempora tempore minima.
+                    Adipisci, obcaecati repellat.</p>
+                <button>Read More</button>
+            </section>
+            <section class="section-b">
+                <h2>PWA Development</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni fugiat similique illo nobis quibusdam
+                    commodi aspernatur, tempora doloribus quod, consectetur deserunt, facilis natus optio. Iure
+                    provident labore nihil in earum.</p>
+                <button>Read More</button>
+            </section>
+            <section class="section-c">
+                <h2>Mobile App Dev</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eos culpa laudantium consequatur ea!
+                    Quibusdam, iure obcaecati. Adipisci deserunt, alias repellat eligendi odit labore! Fugit iste sit
+                    laborum debitis eos?</p>
+                <button>Read More</button>
+            </section>
+            <section class="section-c">
+                <h3>last  App Dev</h2>
+                <h5 id="lasth5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eos culpa laudantium consequatur ea!
+                    Quibusdam, iure obcaecati. Adipisci deserunt, alias repellat eligendi odit labore! Fugit iste sit
+                    laborum debitis eos?</p>
+                <button>Read More</button>
+            </section>
+        </div>
+    </main>
+    <ul id="menu">
+        <li>Home</li>
+        <li>Products</li>
+        <li class="current2">Customer Support</li>
+        <li>Careers</li>
+        <li>Investors</li>
+        <li>News</li>
+        <li>About Us</li>
+    </ul>
+    <ul id="anotherMenu">
+        <li class="first">Home</li>
+        <li>Products</li>
+        <li class="currentLi">Customer Support</li>
+        <li>Careers</li>
+        <li>Investors</li>
+        <li>News</li>
+        <li class="last">About Us</li>
+      </ul>
+    <script>
+        //ChildElements
+        let anothermenu = document.querySelector("#anotherMenu");
+        let firstChildMenu = anothermenu.firstElementChild;
+        let lastChildMenu = anothermenu.lastElementChild;
+        console.log('childMenu', firstChildMenu);
+        console.log('lastMenu', lastChildMenu);
+        firstChildMenu.style.backgroundColor = "green";
+        lastChildMenu.style.backgroundColor = "green";
+        let allChild = Array.of(anotherMenu.children);
+        let anotherMapChild = [].map.call(allChild, ch=> console.log(ch.innerText));
+        console.log(allChild);
+        // allChild.forEach((anotherMenuChil)=>{
+        //     anotherMenuChil.style.display = "none";
+        // })
+        // allChild.style.backgroundColor = "red";
+    </script>
+    <script>
+        //Siblings
+        let current = document.querySelector(".current2");
+        let nextSibling = current.nextElementSibling;
+        console.log(current.nextElementSibling);
+        //To get all siblings
+        while(nextSibling){
+            console.log(nextSibling.innerText);
+            nextSibling = nextSibling.nextElementSibling;
+        }
+        let previosSibling = current.previousElementSibling;
+        console.log(previosSibling.innerText);
+
+    </script>
+    <script>
+        //QuerySelector
+        let childNode = document.querySelector('#lasth5'); //get ParentNode from childNode 
+        console.log(childNode.parentNode);
+        let adjacentSibling = document.querySelectorAll("h3 + h5");
+        adjacentSibling.forEach((adjaSib)=>{
+            adjaSib.style.backgroundColor = "blue";
+        })
+        let groupingSelector = Array.from(document.querySelectorAll("h2, h2"));
+        groupingSelector.forEach((group)=>{
+            // console.log(group.style.backgroundColor="black");
+        })
+        let descendentCombinator = document.querySelectorAll("h2 ~ p");
+        descendentCombinator.forEach((singleDescendentCombinator)=>{
+            singleDescendentCombinator.style.color = "red";
+        })
+            console.log("groupingSelector", groupingSelector);
+        let parent = document.querySelector(".container");
+        console.log(parent);
+        let childs = Array.from(parent.children);
+        console.log(childs);
+        childs.forEach((child) => {
+            console.log(child.style.backgroundColor = "grey");
+        })
+        let mapChild = [].map.call(childs, child => console.log('mapChild', child.innerText));
+
+        let firstHeading = document.querySelector('h1'); //get the first h1.
+        console.log(firstHeading);
+        let firstHeadingAll = document.querySelectorAll('h1');
+        console.log(firstHeadingAll); //return nodeList
+        firstHeadingAll.forEach((h1)=>{
+            console.log(h1.style.color = "green");
+        })
+    </script>
+    <script>
+        //getElementsByClassName
+        let menu = document.getElementById('menu');
+        let items = Array.from(menu.getElementsByClassName('item'));
+        let itemsArray = Array.from(items);
+        itemsArray.forEach((item)=>{
+            console.log(item.textContent);
+        })
+        let data = [].map.call(items, item => item.textContent);
+        console.log('mapData', data); //mapData (4) ['HTML', 'CSS', 'JavaScript', 'TypeScript']
+        items.forEach((item) =>{{
+            item.style.color = "blue";
+            console.log(item.innerHTML);
+        }}) 
+
+    </script>
+    <script>
+        //getElementsByTagName
+        let getTagNames = Array.from(document.getElementsByTagName('h2')); //HTMLCollection(3) [h2, h2, h2] => Array like object
+        let tagBtn = document.getElementById('btnTagCount');
+        tagBtn.addEventListener("click", ()=>{
+            console.log('totalH2TagNames' , getTagNames.length); //totalH2TagNames 3
+        })
+        getTagNames.forEach((singleTagName) => {
+            console.log(singleTagName.innerHTML);
+        })
+        //getElementById:
+        let firstID = document.getElementById('firstId');
+        console.log(firstID.innerText);
+        let nullID = document.getElementById('fi');
+        console.log(nullID); //null => if not found
+        let btn = document.getElementById('btnRate');
+
+        //getElementByName
+        let getNullName = document.getElementsByName('nullName');
+        console.log(getNullName); //NodeList [] => Empty nodelist if not found
+        let getName = document.getElementsByName('rate');
+        console.log(getName); //Return Nodelist [NodeList(5) [input, input, input, input, input]]
+        let singleGetNames = Array.from(getName); 
+        console.log(singleGetNames); //return array [(5) [input, input, input, input, input]]
+        singleGetNames.forEach((names) => {
+            console.log(names);
+        });
+        // function cons(element){
+        //     console.log(element);
+        // }
+        btn.addEventListener('click', () => {
+            let rates = document.getElementsByName('rate');
+            rates.forEach((rate) => {
+                if (rate.checked) {
+                    alert(`You rated: ${rate.value}`);
+                }
+            })
+        });
+    </script>
+</body>
+</html>

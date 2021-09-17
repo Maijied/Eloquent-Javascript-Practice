@@ -8,6 +8,10 @@
 // They can be passed into other functions as parameters or returned from them as well.
 // A “higher-order function” is a function that accepts functions as parameters and/or returns a function.
 
+// A callback function is a function that is passed as an argument to another function, to be “called back” 
+// at a later time. A function that accepts other functions as arguments is called a higher-order function, which 
+// contains the logic for when the callback function gets executed. It’s the combination of these two that allow us to extend our functionality.
+
 //Callback function Example 1
 function iWillCallYou(tmpVal2){
     console.log(`Called from 1st Local ${tmpVal2}`);
